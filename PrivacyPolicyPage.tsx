@@ -16,7 +16,7 @@ const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate }) => 
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center">
                             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-                                Informativa sulla Privacy
+                                Informativa sulla Privacy e Cookie Policy
                             </h1>
                             <p className="mt-4 text-xl text-gray-600">
                                 La tua privacy è importante per noi.
@@ -76,6 +76,28 @@ const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate }) => 
                             <h2>7. Modifiche a questa Privacy Policy</h2>
                             <p>
                                 Ci riserviamo il diritto di apportare modifiche a questa privacy policy in qualunque momento, dandone pubblicità su questa pagina. Si prega dunque di consultare regolarmente questa pagina, facendo riferimento alla data di ultima modifica indicata in alto.
+                            </p>
+                            
+                            <h2>8. Cookie Policy</h2>
+                            <p>
+                                I cookie sono piccoli file di testo che i siti visitati dagli utenti inviano ai loro terminali, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla successiva visita.
+                            </p>
+                            <h3>Tipologie di Cookie utilizzati</h3>
+                            <p>
+                                Questo sito utilizza principalmente <strong>cookie tecnici</strong>, essenziali per il corretto funzionamento delle pagine web. Questi cookie non richiedono il consenso dell'utente. Non utilizziamo cookie di profilazione per inviare messaggi pubblicitari in linea con le preferenze manifestate dall'utente.
+                            </p>
+                             <p>
+                                Possono essere presenti cookie di terze parti (es. Google Fonts) per l'integrazione di funzionalità esterne. La gestione di questi cookie è disciplinata dalle relative informative sulla privacy cui si prega di fare riferimento.
+                            </p>
+                            <h3>Gestione dei Cookie</h3>
+                            <p>
+                                L'utente può gestire le preferenze relative ai cookie direttamente all'interno del proprio browser ed impedire – ad esempio – che terze parti possano installarne. Tramite le preferenze del browser è inoltre possibile eliminare i cookie installati in passato. È importante notare che disabilitando tutti i cookie, il funzionamento di questo sito potrebbe essere compromesso. Puoi trovare informazioni su come gestire i cookie nel tuo browser ai seguenti indirizzi:
+                                <ul>
+                                    <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+                                    <li><a href="https://support.mozilla.org/it/kb/Gestione%20dei%20cookie" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+                                    <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Apple Safari</a></li>
+                                    <li><a href="https://support.microsoft.com/it-it/windows/eliminare-e-gestire-i-cookie-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+                                </ul>
                             </p>
                         </article>
                          <div className="mt-20 text-center">
