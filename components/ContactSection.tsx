@@ -40,10 +40,15 @@ const AccordionItem: React.FC<{ item: FaqItem; isOpen: boolean; onClick: () => v
     </div>
 );
 
+interface ContactSectionProps {
+    onNavigate: (page: 'home' | 'programs' | 'company' | 'privacy') => void;
+}
 
-const ContactSection: React.FC = () => {
+const ContactSection: React.FC<ContactSectionProps> = ({ onNavigate }) => {
     const [openFaq, setOpenFaq] = useState<number | null>(0);
     const [formState, setFormState] = useState({ name: '', email: '', company: '', message: '' });
+    const [privacyAccepted, setPrivacyAccepted] = useState(false);
+
 
     const handleFaqToggle = (index: number) => {
         setOpenFaq(openFaq === index ? null : index);
@@ -55,6 +60,10 @@ const ContactSection: React.FC = () => {
     
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        if (!privacyAccepted) {
+            alert("Per favore, accetta l'informativa sulla privacy per procedere.");
+            return;
+        }
         const subject = encodeURIComponent(`Richiesta di informazioni da ${formState.company || 'un potenziale cliente'}`);
         const body = encodeURIComponent(
 `Nome: ${formState.name}
@@ -98,7 +107,28 @@ ${formState.message}`
                                 <label htmlFor="message" className="sr-only">Messaggio</label>
                                 <textarea name="message" id="message" rows={4} placeholder="Il tuo messaggio" required value={formState.message} onChange={handleInputChange} className="w-full px-4 py-3 rounded-md border-gray-300 focus:ring-teal-500 focus:border-teal-500"></textarea>
                             </div>
-                            <button type="submit" className="w-full py-3 px-6 bg-teal-600 text-white font-bold rounded-md hover:bg-teal-700 transition-colors">Invia Richiesta</button>
+                            <div className="flex items-start">
+                                <div className="flex items-center h-5">
+                                    <input
+                                        id="privacy"
+                                        name="privacy"
+                                        type="checkbox"
+                                        checked={privacyAccepted}
+                                        onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                                        className="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded"
+                                    />
+                                </div>
+                                <div className="ml-3 text-sm">
+                                    <label htmlFor="privacy" className="text-gray-600">
+                                        Ho letto e accetto l'{' '}
+                                        <button type="button" onClick={() => onNavigate('privacy')} className="font-medium text-teal-600 hover:text-teal-700 underline">
+                                            Informativa sulla Privacy
+                                        </button>
+                                        .
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" disabled={!privacyAccepted} className="w-full py-3 px-6 bg-teal-600 text-white font-bold rounded-md hover:bg-teal-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">Invia Richiesta</button>
                         </form>
                          <div className="mt-8 text-center text-gray-600 space-y-2">
                             <p>Oppure scrivici a: <a href="mailto:criyogacri@gmail.com" className="text-teal-600 font-semibold hover:underline">criyogacri@gmail.com</a></p>

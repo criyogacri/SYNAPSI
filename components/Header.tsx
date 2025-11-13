@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import LogoIcon from './icons/LogoIcon';
 
 interface HeaderProps {
-    onNavigate: (page: 'home' | 'programs' | 'company') => void;
+    onNavigate: (page: 'home' | 'programs' | 'company' | 'privacy') => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ onNavigate }) => {

@@ -11,7 +11,7 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
 interface HomePageProps {
-    onNavigate: (page: 'home' | 'programs' | 'company') => void;
+    onNavigate: (page: 'home' | 'programs' | 'company' | 'privacy') => void;
 }
 
 const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
@@ -26,7 +26,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <ProgramsSection />
                 <StatsSection />
                 <TestimonialsSection />
-                <ContactSection />
+                <ContactSection onNavigate={onNavigate} />
             </main>
             <Footer onNavigate={onNavigate} />
         </>

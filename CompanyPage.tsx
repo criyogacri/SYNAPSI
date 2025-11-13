@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 interface CompanyPageProps {
-    onNavigate: (page: 'home' | 'programs' | 'company') => void;
+    onNavigate: (page: 'home' | 'programs' | 'company' | 'privacy') => void;
 }
 
 const CompanyPage: React.FC<CompanyPageProps> = ({ onNavigate }) => {

@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -13,7 +14,7 @@ import TeamBuildingIcon from './components/icons/TeamBuildingIcon';
 import CustomProgramIcon from './components/icons/CustomProgramIcon';
 
 interface ProgramsPageProps {
-    onNavigate: (page: 'home' | 'programs' | 'company') => void;
+    onNavigate: (page: 'home' | 'programs' | 'company' | 'privacy') => void;
 }
 
 const programsData = [
